@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Register</title>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;600;700&display=swap" rel="stylesheet">
+<style>
+  :root{--accent:#4F46E5;--accent-dark:#4038C4;--text:#1E1E24;--muted:#6B6B76;--border:#DCD8F0;--error:#DC2626;}
+  *{box-sizing:border-box;}
+  body{margin:0;min-height:100vh;background:linear-gradient(155deg,#6D5AE0 0%,#4F46E5 42%,#2E2A8F 100%);font-family:'Plus Jakarta Sans',sans-serif;color:var(--text);display:flex;align-items:center;justify-content:center;padding:32px 16px;}
+  .card{width:100%;max-width:440px;background:#FBFAFF;border-radius:22px;padding:40px 36px;box-shadow:0 30px 60px -20px rgba(24,16,80,0.45);}
+  .card h1{font-size:24px;font-weight:700;margin:0 0 4px;color:#2E2A8F;}
+  .card .sub{font-size:14px;color:var(--muted);margin:0 0 28px;}
+  .group{margin-bottom:18px;}
+  label{display:block;font-size:13px;font-weight:600;margin-bottom:6px;}
+  input,textarea{width:100%;font-family:inherit;font-size:14.5px;padding:11px 14px;border:1.5px solid var(--border);border-radius:10px;outline:none;color:var(--text);background:#F3F1FC;resize:none;transition:border-color .15s,background .15s;}
+  textarea{min-height:72px;}
+  input::placeholder,textarea::placeholder{color:#9E9CB8;}
+  input:focus,textarea:focus{border-color:var(--accent);background:#fff;}
+  .group.has-error input,.group.has-error textarea{border-color:var(--error);background:#FEF4F3;}
+  .error-msg{font-size:12.5px;color:var(--error);margin-top:5px;display:none;}
+  .error-msg.show{display:block;}
+  button{width:100%;background:var(--accent);color:#fff;border:none;border-radius:10px;font-family:inherit;font-size:15px;font-weight:600;padding:13px;margin-top:8px;cursor:pointer;transition:background .15s;}
+  button:hover{background:var(--accent-dark);}
+</style>
+</head>
+<body>
+  <div class="card">
+    <h1>Buat akun baru</h1>
+    <p class="sub">Isi data di bawah untuk mendaftar.</p>
+    <form id="registerForm" action="dashboard.html" method="GET" novalidate>
+      <div class="group" data-field="username">
+        <label for="username">Username</label>
+        <input type="text" id="username" name="username" placeholder="Minimal 3 karakter">
+        <p class="error-msg"></p>
+      </div>
+      <div class="group" data-field="password">
+        <label for="password">Password</label>
+        <input type="password" id="password" name="password" placeholder="Minimal 8 karakter">
+        <p class="error-msg"></p>
+      </div>
+      <div class="group" data-field="nama">
+        <label for="nama">Nama</label>
+        <input type="text" id="nama" name="nama" placeholder="Nama lengkap">
+        <p class="error-msg"></p>
+      </div>
+      <div class="group" data-field="tanggal_lahir">
+        <label for="tanggal_lahir">Tanggal Lahir</label>
+        <input type="date" id="tanggal_lahir" name="tanggal_lahir">
+        <p class="error-msg"></p>
+      </div>
+      <div class="group" data-field="alamat">
+        <label for="alamat">Alamat</label>
+        <textarea id="alamat" name="alamat" placeholder="Alamat domisili"></textarea>
+        <p class="error-msg"></p>
+      </div>
+      <div class="group" data-field="telpon">
+        <label for="telpon">Nomor Telpon</label>
+        <input type="text" id="telpon" name="telpon" placeholder="Diawali 62">
+        <p class="error-msg"></p>
+      </div>
+      <button type="submit">Daftar</button>
+    </form>
+  </div>
+  <script src="validasi_input.js"></script>
+</body>
+</html>
